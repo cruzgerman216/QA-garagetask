@@ -4,16 +4,38 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Garage {
-	protected List<Vehicle> store = new ArrayList<>();
+	protected List<Vehicle> storage = new ArrayList<>();
 	protected double bill;
 
+	public Garage() {
+		this.bill = 0;
+	}
+
+	public void removeVehicle(Vehicle v) {
+		List<Vehicle> storage2 = new ArrayList<>();
+		for (Vehicle vehicle : storage) {
+			if (!vehicle.getClass().equals(v.getClass())) {
+				storage2.add(vehicle);
+			}
+		}
+		storage = storage2;
+	}
+
+	public void removeVehicle(int id) {
+		for (Vehicle v : storage) {
+			if (v.id == id) {
+				storage.remove(v);
+			}
+		}
+	}
+
 	public void fix(Vehicle v) {
-		for (Vehicle v1 : store) {
-			if (v1.getClass().equals(v.getClass())) {
+		for (Vehicle vehicle : storage) {
+			if (vehicle.getClass().equals(v.getClass())) {
 				this.bill += 1500.09;
-			} else if (v1 instanceof Motorcycle) {
+			} else if (vehicle instanceof Motorcycle) {
 				this.bill += 600.32;
-			} else if (v1 instanceof Truck) {
+			} else if (vehicle instanceof Truck) {
 				this.bill += 2000.53;
 			}
 		}
@@ -23,7 +45,7 @@ public class Garage {
 
 	public void printGaragePrice() {
 		double price = 0;
-		for (Vehicle v : store) {
+		for (Vehicle v : storage) {
 			if (v instanceof Car) {
 				price += 26434.09;
 			} else if (v instanceof Motorcycle) {
@@ -35,34 +57,16 @@ public class Garage {
 		System.out.println("Price comes out to be " + price);
 	}
 
-	public void removeVehicle(Vehicle v) {
-		List<Vehicle> store2 = new ArrayList<>();
-		for (Vehicle v1 : store) {
-			if (!v1.getClass().equals(v.getClass())) {
-				store2.add(v1);
-			}
-		}
-		store = store2;
-	}
-
-	public void removeVehicle(int id) {
-		for (Vehicle v : store) {
-			if (v.id == id) {
-				store.remove(v);
-			}
-		}
-	}
-
 	public void emptyGarage() {
-		store.clear();
+		storage.clear();
 	}
 
-	public List<Vehicle> getStore() {
-		return store;
+	public List<Vehicle> getstorage() {
+		return storage;
 	}
 
-	public void setStore(List<Vehicle> store) {
-		this.store = store;
+	public void setstorage(List<Vehicle> storage) {
+		this.storage = storage;
 	}
 
 	public double getBill() {
@@ -73,11 +77,7 @@ public class Garage {
 		this.bill = bill;
 	}
 
-	public Garage() {
-		this.bill = 0;
-	}
-
 	public void addVehicle(Vehicle v) {
-		store.add(v);
+		storage.add(v);
 	}
 }
