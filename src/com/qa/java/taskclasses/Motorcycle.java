@@ -14,5 +14,7 @@ public class Motorcycle extends Vehicle {
 	public void setHasWindShield(boolean hasWindShield) {
 		this.hasWindShield = hasWindShield;
 	}
-
+	@Override
+	public void readerManual() {
+	}
 }

@@ -15,4 +15,7 @@ public class Car extends Vehicle {
 		this.numDoors = numDoors;
 	}
 
+	@Override
+	public void readerManual() {
+	}
 }
