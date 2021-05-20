@@ -36,12 +36,13 @@ public class Garage {
 	}
 
 	public void removeVehicle(Vehicle v) {
-
+		List<Vehicle> store2 = new ArrayList<>();
 		for (Vehicle v1 : store) {
-			if (v1.getClass().equals(v.getClass())) {
-				store.remove(v1);
+			if (!v1.getClass().equals(v.getClass())) {
+				store2.add(v1);
 			}
 		}
+		store = store2;
 	}
 
 	public void removeVehicle(int id) {

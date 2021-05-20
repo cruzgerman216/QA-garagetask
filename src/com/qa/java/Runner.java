@@ -4,6 +4,7 @@ import com.qa.java.taskclasses.Car;
 import com.qa.java.taskclasses.Garage;
 import com.qa.java.taskclasses.Motorcycle;
 import com.qa.java.taskclasses.Truck;
+import com.qa.java.taskclasses.Vehicle;
 
 public class Runner {
 
@@ -11,7 +12,7 @@ public class Runner {
 		Car car = new Car("Mazda", 324);
 		Motorcycle motorcycle = new Motorcycle("ninja3000", 123);
 		Truck truck = new Truck("Ford F-150", 843);
-		Truck truck2 = new Truck("Honda Ridgeline", 541);
+		Vehicle truck2 = new Truck("Honda Ridgeline", 541);
 		Garage garage = new Garage();
 		garage.addVehicle(car);
 		garage.addVehicle(motorcycle);

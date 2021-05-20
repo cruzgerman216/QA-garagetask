@@ -14,6 +14,7 @@ public class Truck extends Vehicle {
 	public void setHasCargo(boolean hasCargo) {
 		this.hasCargo = hasCargo;
 	}
+
 	@Override
 	public void readerManual() {
 	}
